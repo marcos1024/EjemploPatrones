@@ -27,7 +27,7 @@ public class formUsuario {
         textIdUsuario = new JTextField(35);
         textNombre = new JTextField(35);
         textEmail = new JTextField(35);
-
+        btnRegistrarUsuario = new JButton("Registrar Usuario");
 
         gbc.gridx = 0; gbc.gridy = 0;
         panelPrincipal.add(new JLabel("Id Usuario"), gbc);
