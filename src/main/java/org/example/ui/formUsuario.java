@@ -46,25 +46,31 @@ public class formUsuario {
         LbResultadoBusqueda = new JLabel("Resultado Buscado");
         jTListadoUsuario = new JTable(modeloTabla);
 
-        gbc.gridx = 0; gbc.gridy = 0;
+        gbc.gridx = 0;
+        gbc.gridy = 0;
         panelPrincipal.add(new JLabel("Id Usuario"), gbc);
         gbc.gridx = 1;
         panelPrincipal.add(textIdUsuario, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 1;
+        gbc.gridx = 0;
+        gbc.gridy = 1;
         panelPrincipal.add(new JLabel("Nombre"), gbc);
         gbc.gridx = 1;
         panelPrincipal.add(textNombre, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 2;
+        gbc.gridx = 0;
+        gbc.gridy = 2;
         panelPrincipal.add(new JLabel("Email"), gbc);
         gbc.gridx = 1;
         panelPrincipal.add(textEmail, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 3; gbc.gridwidth = 2;
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.gridwidth = 2;
         panelPrincipal.add(btnRegistrarUsuario, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 4;
+        gbc.gridx = 0;
+        gbc.gridy = 4;
         gbc.fill = GridBagConstraints.BOTH;
         gbc.weightx = 1.0;
         gbc.weighty = 1.0;
@@ -75,15 +81,19 @@ public class formUsuario {
         gbc.weighty = 0.0;
         gbc.gridwidth = 1;
 
-        gbc.gridx = 0; gbc.gridy = 5;
+        gbc.gridx = 0;
+        gbc.gridy = 5;
         panelPrincipal.add(new JLabel("Buscar por Id"), gbc);
         gbc.gridx = 1;
         panelPrincipal.add(txtBuscarId, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 6; gbc.gridwidth = 2;
+        gbc.gridx = 0;
+        gbc.gridy = 6;
+        gbc.gridwidth = 2;
         panelPrincipal.add(btnBuscarXId, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 7;
+        gbc.gridx = 0;
+        gbc.gridy = 7;
         panelPrincipal.add(LbResultadoBusqueda, gbc);
 
         btnRegistrarUsuario.addActionListener(new ActionListener() {
@@ -115,4 +125,5 @@ public class formUsuario {
     public JPanel getPanelPrincipal() {
         return panelPrincipal;
     }
+
 }
