@@ -3,6 +3,7 @@ package org.example;
 import org.example.facade.AppFacade;
 import org.example.modelo.Usuario;
 import org.example.ui.formUsuario;
+import org.example.ui.formV2;
 
 import javax.swing.*;
 import javax.swing.SwingUtilities;
@@ -33,18 +34,18 @@ public class Main {
 //        sistema.finalizarAplicacion();
 //        System.out.println("=== PRUEBA FINALIZADA CON ÉXITO ===");
 
-
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Alta de usuarios");
 
-            formUsuario form = new formUsuario(new AppFacade());
-            frame.setContentPane(form.getPanelPrincipal());
+            formV2 form = new formV2(new AppFacade());
+            frame.setContentPane(form.getJPanelFormV2());
 
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.pack();
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
         });
+
 
 
     }
