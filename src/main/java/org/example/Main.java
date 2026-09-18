@@ -2,33 +2,49 @@ package org.example;
 
 import org.example.facade.AppFacade;
 import org.example.modelo.Usuario;
+import org.example.ui.formUsuario;
 
+import javax.swing.*;
+import javax.swing.SwingUtilities;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
-        AppFacade sistema = new AppFacade();
-        System.out.println("=== INICIANDO PRUEBA DE PATRONES DE DISEÑO ===");
+//        AppFacade sistema = new AppFacade();
+//        System.out.println("=== INICIANDO PRUEBA DE PATRONES DE DISEÑO ===");
+//
+//        sistema.registrarUsuario("Carlos Gomez", "carlos@email.com");
+//        sistema.registrarUsuario("Ana Martinez", "ana@email.com");
+//        sistema.registrarUsuario("Maria Perez", "mperez@email.com");
+//        sistema.registrarUsuario("Pedro Lopez", "plopez@email.com");
+//
+//        List<Usuario> lista = sistema.obtenerTodosLosUsuarios();
+//        System.out.println("\n[Main] Usuarios registrados en el sistema:");
+//        for (Usuario u : lista) {
+//            System.out.println(" - " + u);
+//        }
+//
+//        Usuario buscado = sistema.obtenerUsuarioPorId(1L);
+//        if (buscado != null) {
+//            System.out.println("[Main] Usuario encontrado: " + buscado.getNombre());
+//        }
+//
+//        sistema.finalizarAplicacion();
+//        System.out.println("=== PRUEBA FINALIZADA CON ÉXITO ===");
 
-        sistema.registrarUsuario("Carlos Gomez", "carlos@email.com");
-        sistema.registrarUsuario("Ana Martinez", "ana@email.com");
-        sistema.registrarUsuario("Maria Perez", "mperez@email.com");
-        sistema.registrarUsuario("Pedro Lopez", "plopez@email.com");
 
-        List<Usuario> lista = sistema.obtenerTodosLosUsuarios();
-        System.out.println("\n[Main] Usuarios registrados en el sistema:");
-        for (Usuario u : lista) {
-            System.out.println(" - " + u);
-        }
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Alta de usuarios");
 
-        Usuario buscado = sistema.obtenerUsuarioPorId(1L);
-        if (buscado != null) {
-            System.out.println("[Main] Usuario encontrado: " + buscado.getNombre());
-        }
+            formUsuario form = new formUsuario(new AppFacade());
+            frame.setContentPane(form.getPanelPrincipal());
 
-        sistema.finalizarAplicacion();
-        System.out.println("=== PRUEBA FINALIZADA CON ÉXITO ===");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.pack();
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+        });
 
 
     }
